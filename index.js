@@ -13,6 +13,9 @@ connectDB();
 
 // Routes
 app.use('/api/orders', orderRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'Server is up and running!' });
+});
 
 // Start server
 const PORT = process.env.PORT || 3033;
